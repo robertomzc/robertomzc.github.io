@@ -49,12 +49,6 @@
 
     <link rel="stylesheet" href="/assets/css/theme.css" />
 
-    <!-- Swipper -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/siema@1.6.1/dist/siema.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/siema@1.6.1/dist/siema.min.js"></script>
-
-    <!-- Swipper -->
-
     
   </head>
   <body>
@@ -161,12 +155,7 @@ Please do not hesitate to contact me if any further question arises.</p>
       src="/assets/js/theme.js"
       data-no-instant
     ></script>
-    <script
-      src="/assets/js/instantclick.min.js"
-      data-no-instant
-    ></script>
     <script data-no-instant>
-      InstantClick.on("change", () => {
         // set theme on page change
         setTheme();
 
@@ -184,9 +173,7 @@ Please do not hesitate to contact me if any further question arises.</p>
           nav.classList.toggle("hidden");
           nav.classList.toggle("flex");
         });
-      });
 
-      InstantClick.init("mousedown");
     </script>
   </body>
 </html>

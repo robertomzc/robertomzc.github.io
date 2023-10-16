@@ -49,12 +49,6 @@
 
     <link rel="stylesheet" href="/assets/css/theme.css" />
 
-    <!-- Swipper -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/siema@1.6.1/dist/siema.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/siema@1.6.1/dist/siema.min.js"></script>
-
-    <!-- Swipper -->
-
     
   </head>
   <body>
@@ -108,11 +102,10 @@
 
     <main>
 <h2 class="text-center mt-8 font-black">UAV Windtunnel Campaing</h2>
+<p class="mt-2 text-slate-500 dark:text-slate-300 text-center">2022</p>
 
 
   
-
-
 
 <div class="arrow-gallery">
     <div class="gallery-item">
@@ -138,16 +131,18 @@
 
 
 <script>
-    let currentIndex = 0;
-    let touchStartX = 0;
-    let touchEndX = 0;
-    const gallery = document.getElementById('gallery-image');
+    currentImageIndex = 0;
+    const galleryElement = document.getElementById('gallery-image');
 
-    const galleryImages = [
+    galleryImages = [
         
             "/assets/images/projects/windtunnel-test/windtunnel-test.jpg",
         
     ];
+
+    // Initial setup
+    galleryElement.src = galleryImages[currentImageIndex];
+    toggleArrows();
 
     function toggleArrows() {
         const leftArrow = document.getElementById('leftarrow');
@@ -163,27 +158,18 @@
     }
 
     function changeImage(offset) {
-      currentIndex += offset;
+      currentImageIndex += offset;
 
-      if (currentIndex < 0) {
-        currentIndex = galleryImages.length - 1;
-      } else if (currentIndex >= galleryImages.length) {
-        currentIndex = 0;
+      if (currentImageIndex < 0) {
+        currentImageIndex = galleryImages.length - 1;
+      } else if (currentImageIndex >= galleryImages.length) {
+        currentImageIndex = 0;
       }
 
-      gallery.src = galleryImages[currentIndex];
+      galleryElement.src = galleryImages[currentImageIndex];
     }
-
-    // Initial setup
-    gallery.src = galleryImages[currentIndex];
-    toggleArrows();
-
 </script>
 
-
-
-
-<p class="mt-2 text-slate-500 dark:text-slate-300 text-center">2022</p>
 
 
 
@@ -191,8 +177,8 @@
 
 <div class="mt-10 content">
   <p>The aerodynamic designs of the UAVs at senseFly were usually validated with a windtunnel campaign.
-The full test-bench, acquisition and postprocessing was built in-house, including the model in which thanks to a
-central frame design, different parts can be interchanged to also evaluate the performances of different design choices
+The full test-bench, acquisition and postprocessing was built in-house, including the model. Thanks to a
+central frame design, different parts can be interchanged to also evaluate the performances of different design choices.
 We carried out tests in different places in Europe such as TU Delft or the ETH from Zurich.</p>
 
 <p><em>No more details can be given due to confidentiality reasons</em></p>
@@ -209,7 +195,9 @@ We carried out tests in different places in Europe such as TU Delft or the ETH f
   
   <span class="tag">Python</span>
   
-</div></main>
+</div>
+
+</main>
 
     <footer>
     <p>&copy; 2023 <a href="https://github.com/robertomzc/portfolio"> RMC</a>  |  Thanks to <a href="https://github.com/gouravkhunger/portfolio" target="_blank">Gourav Khunger</a> and ChatGPT!</p>
@@ -221,12 +209,7 @@ We carried out tests in different places in Europe such as TU Delft or the ETH f
       src="/assets/js/theme.js"
       data-no-instant
     ></script>
-    <script
-      src="/assets/js/instantclick.min.js"
-      data-no-instant
-    ></script>
     <script data-no-instant>
-      InstantClick.on("change", () => {
         // set theme on page change
         setTheme();
 
@@ -244,9 +227,7 @@ We carried out tests in different places in Europe such as TU Delft or the ETH f
           nav.classList.toggle("hidden");
           nav.classList.toggle("flex");
         });
-      });
 
-      InstantClick.init("mousedown");
     </script>
   </body>
 </html>

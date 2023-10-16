@@ -49,12 +49,6 @@
 
     <link rel="stylesheet" href="/assets/css/theme.css" />
 
-    <!-- Swipper -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/siema@1.6.1/dist/siema.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/siema@1.6.1/dist/siema.min.js"></script>
-
-    <!-- Swipper -->
-
     
   </head>
   <body>
@@ -108,11 +102,10 @@
 
     <main>
 <h2 class="text-center mt-8 font-black">Wind Aerostructures FS Team Delft</h2>
+<p class="mt-2 text-slate-500 dark:text-slate-300 text-center">2016</p>
 
 
   
-
-
 
 <div class="arrow-gallery">
     <div class="gallery-item">
@@ -133,6 +126,8 @@
         
             <img loading="eager" src="/assets/images/projects/delft-formula-student-team/MouldNewMouldlessMethodForCarbonFiberManufacturing.jpg" alt="Gallery Image">
         
+            <img loading="eager" src="/assets/images/projects/delft-formula-student-team/DUT17.webp" alt="Gallery Image">
+        
 
     </div>
 </div>
@@ -140,18 +135,22 @@
 
 
 <script>
-    let currentIndex = 0;
-    let touchStartX = 0;
-    let touchEndX = 0;
-    const gallery = document.getElementById('gallery-image');
+    currentImageIndex = 0;
+    const galleryElement = document.getElementById('gallery-image');
 
-    const galleryImages = [
+    galleryImages = [
         
             "/assets/images/projects/delft-formula-student-team/NewMouldlessMethodForCarbonFiberManufacturing.jpg",
         
             "/assets/images/projects/delft-formula-student-team/MouldNewMouldlessMethodForCarbonFiberManufacturing.jpg",
         
+            "/assets/images/projects/delft-formula-student-team/DUT17.webp",
+        
     ];
+
+    // Initial setup
+    galleryElement.src = galleryImages[currentImageIndex];
+    toggleArrows();
 
     function toggleArrows() {
         const leftArrow = document.getElementById('leftarrow');
@@ -167,58 +166,48 @@
     }
 
     function changeImage(offset) {
-      currentIndex += offset;
+      currentImageIndex += offset;
 
-      if (currentIndex < 0) {
-        currentIndex = galleryImages.length - 1;
-      } else if (currentIndex >= galleryImages.length) {
-        currentIndex = 0;
+      if (currentImageIndex < 0) {
+        currentImageIndex = galleryImages.length - 1;
+      } else if (currentImageIndex >= galleryImages.length) {
+        currentImageIndex = 0;
       }
 
-      gallery.src = galleryImages[currentIndex];
+      galleryElement.src = galleryImages[currentImageIndex];
     }
-
-    // Initial setup
-    gallery.src = galleryImages[currentIndex];
-    toggleArrows();
-
 </script>
 
-
-
-
-<p class="mt-2 text-slate-500 dark:text-slate-300 text-center">2016</p>
 
 
 
 
 
 <div class="mt-10 content">
-  <p><strong>Add photo of DUT 18!</strong></p>
+  <p>After the two years spent in the Formula Student Team of the Universidad Politecnica de Madrid, UPM Racing
+(see <a href="/project/upm13c-wings">wings</a> and <a href="/project/upm12c-bodywork">bodywork</a> projects),
+I moved to the Netherlands, Delft for the Aerospace MSc. TU Delft hosts one of the best Formula Student teams on the world
+(<a href="https://www.fsteamdelft.nl/" rel="nofollow noopener noreferrer" target="_blank">Formula Student Team Delft</a>), and thus I applied to join.</p>
 
-<p>After the two years spent in the <strong>link</strong> Formula Student Team of the Universidad Politecnica de Madrid (UPM Racing),
-I moved to the Netherlands, Delft for the Aerospace MSc. Known to be one of the best Formula Student Teams in
-the world, I decided I had to join.</p>
-
-<p>After an interview, as in a real job, a colleague and I were assigned to the structural design of the front 
+<p>After a couple of interviews, a colleague and I were assigned to the structural design of the front 
 and rear wing. The wings are usually made of a nucleus of foam covered by epoxy-resin-preimpregnated
-(<em>prepreg</em>) carbon fiber. The process for their manufacturing consists of milling the foam to the shape of the wing
+(<em>prepreg</em>) carbon fiber. The process consists on milling the foam to the shape of the wing
 (a bit smaller actually), covering it with the carbon fiber fabric, close two moulds (one upper and one lower)
 and heating and making a vacuum around all the assembly.</p>
 
-<p>This process however required the construction of two molds (expensive and time-consuming), and left some
+<p>This process, however, required the construction of two molds (expensive and time-consuming), and left some
 accumulation of resin where the upper and lower molds joint. Similarly to when there is too much soup
 in the lunchbox and a small quantity spills when closing the lid. This was aesthetically not pleasing, but furthermore
-deteriorated the air flow from the very leading edge (tip) of the wing.</p>
+deteriorated the air flow from the leading edge (front tip) of the wing.</p>
 
-<p>We investigated a new process, inspired on the icelandic team <strong>NAME</strong>, in which one of the molds was removed and a thin 
-aluminum sheet was wrapped around the carbon fiber. Such method had the advantage of requiring only one mold 
+<p>We investigated a new process, inspired on the icelandic team <a href="https://teamspark.is/is" rel="nofollow noopener noreferrer" target="_blank"><em>Spark</em></a>, in which one of the molds
+was removed and a thin aluminum sheet was wrapped around the carbon fiber. Such method had the advantage of requiring only one mold 
 as well as leaving the leading edge of the airfoil clean.</p>
 
 <p>This new approach nonetheless proved to work only in simple geometries (mainly 2D extruded wings), since on
 more complex, twisted elements the aluminum sheet wrinkled easily and produced accumulations of resins.
-Despite of these problems, all the simple wing airfoils (front main element and all rear wing) were manufactured with these new method, saving the team half
-of the time and cost of the molds production.</p>
+Despite these problems, all the simple wing airfoils (front main element and all rear wing) were manufactured with these new method,
+saving the team half of the time and cost of the molds’ production.</p>
 
 </div>
 
@@ -230,7 +219,17 @@ of the time and cost of the molds production.</p>
   
   <span class="tag">Resin Transfer Moulding</span>
   
-</div></main>
+</div>
+
+
+<div class="mt-8 flex flex-col sm:flex-row items-center justify-center">
+  
+  <a href="https://www.fsteamdelft.nl/" target="_blank" class="mx-2 px-3 py-2 link-button" rel="nofollow noopener noreferrer">
+    Formula Student Team Delft
+  </a>
+  
+</div>
+</main>
 
     <footer>
     <p>&copy; 2023 <a href="https://github.com/robertomzc/portfolio"> RMC</a>  |  Thanks to <a href="https://github.com/gouravkhunger/portfolio" target="_blank">Gourav Khunger</a> and ChatGPT!</p>
@@ -242,12 +241,7 @@ of the time and cost of the molds production.</p>
       src="/assets/js/theme.js"
       data-no-instant
     ></script>
-    <script
-      src="/assets/js/instantclick.min.js"
-      data-no-instant
-    ></script>
     <script data-no-instant>
-      InstantClick.on("change", () => {
         // set theme on page change
         setTheme();
 
@@ -265,9 +259,7 @@ of the time and cost of the molds production.</p>
           nav.classList.toggle("hidden");
           nav.classList.toggle("flex");
         });
-      });
 
-      InstantClick.init("mousedown");
     </script>
   </body>
 </html>
