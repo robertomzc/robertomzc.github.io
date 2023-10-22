@@ -102,7 +102,78 @@
 
     <main>
 <h2 class="text-center mt-8 font-black">Referee at Trofeo Zósimo Ibañez</h2>
-<p class="mt-2 text-slate-500 dark:text-slate-300 text-center">2014-2016</p>
+<p class="mt-2 mb-4 text-slate-500 dark:text-slate-300 text-center">2014-2016</p>
+
+
+  
+
+<div class="arrow-gallery">
+    <div class="gallery-item">
+        <img loading="eager" id="gallery-image" src="" alt="Gallery Image">
+        <div class="arrow left-arrow round-button" id="leftarrow" onclick="changeImage(-1)">
+            <svg transform="scale (-1, 1)" transform-origin="center" stroke="currentColor" fill="currentColor" stroke-width="0" viewbox="0 0 16 16" class="w-6 h-6 shrink-0" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"></path></svg>
+        </div>
+        <div class="arrow right-arrow round-button" id="rightarrow" onclick="changeImage(1)">
+            <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewbox="0 0 16 16" class="w-6 h-6 shrink-0" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"></path></svg>
+        </div>
+    </div>
+</div>
+
+<div class="scroll-gallery">
+    <div class="scrolling-container" id="scrollingContainer">
+        
+            <img loading="eager" src="/assets/images/projects/trofeo-zosimo-ibanez/RefereeTrofeoZosimoIbanez.jpg" alt="Gallery Image">
+        
+            <img loading="eager" src="/assets/images/projects/trofeo-zosimo-ibanez/LogoTrofeoZosimoIbanez.jpg" alt="Gallery Image">
+        
+
+    </div>
+</div>
+
+
+
+<script>
+    currentImageIndex = 0;
+    const galleryElement = document.getElementById('gallery-image');
+
+    galleryImages = [
+        
+            "/assets/images/projects/trofeo-zosimo-ibanez/RefereeTrofeoZosimoIbanez.jpg",
+        
+            "/assets/images/projects/trofeo-zosimo-ibanez/LogoTrofeoZosimoIbanez.jpg",
+        
+    ];
+
+    // Initial setup
+    galleryElement.src = galleryImages[currentImageIndex];
+    toggleArrows();
+
+    function toggleArrows() {
+        const leftArrow = document.getElementById('leftarrow');
+        const rightArrow = document.getElementById('rightarrow');
+
+        if (galleryImages.length <= 1) {
+            leftArrow.style.display = 'none';
+            rightArrow.style.display = 'none';
+        } else {
+            leftArrow.style.display = 'block';
+            rightArrow.style.display = 'block';
+        }
+    }
+
+    function changeImage(offset) {
+      currentImageIndex += offset;
+
+      if (currentImageIndex < 0) {
+        currentImageIndex = galleryImages.length - 1;
+      } else if (currentImageIndex >= galleryImages.length) {
+        currentImageIndex = 0;
+      }
+
+      galleryElement.src = galleryImages[currentImageIndex];
+    }
+</script>
+
 
 
 
